@@ -4,8 +4,8 @@
 
 # Site
 title: Lucio
-subtitle: 白开水好喝
-description: 沉淀思想
+subtitle: 写博客是巩固知识的好方法
+description: 白开水好喝
 author: Dong
 language: zh-Hans
 timezone:
@@ -14,7 +14,7 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://happyhack.cn
 root: /
-permalink: :year/:month/:title.html
+permalink: :title.html
 permalink_defaults:
   lang : en
 
@@ -29,7 +29,7 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
-new_post_name: :year:i_month:title.md # File name of new posts
+new_post_name: :year/:month/:day/:title.md # File name of new posts
 default_layout: post
 auto_spacing: true
 titlecase: false # Transform title into titlecase
