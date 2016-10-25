@@ -53,6 +53,7 @@ $ git commit -m '第一次提交' 	#commit
 $ git add remote origin git@github.com:xx/xx.github.io.git  #xx是你github用户名
 $ git push origin git_hexo   	# 分支名自定义
 ```
+
 > 通过以上几步就将本地博客放到Github进行管理了
 
 **通过另外一台电脑进行博客管理**
@@ -69,12 +70,13 @@ $ git add . 		# 将变化文件写入快照
 $ git commit -m '在另外一台电脑中写了一篇文章' # 提交
 $ git push origin git_hexo 		# 推到Github
 ```
+
 #### 切记
 每次编辑时候切记一定要在**git_hexo**分支下编辑
 使用Git管理hexo博客之后，每次都要先切到git_hexo所在分支拉取最新文件，以免覆盖之前文件
 ```
 $ git fetch
-$ git pull 	
+$ git pull origin git_hexo		#从Github拉取git_hexo 分支
 ```
 
 
