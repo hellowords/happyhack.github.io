@@ -1,0 +1,809 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Gitlab," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="今天接到一个任务是在公司的服务器上搭建一个私有的代码版本控制系统。查阅了很多的资料，因为是需要一个网站式的版本管理，所以最终选择了使用Gitlab。其实还可以使用本地的Github的。下次有机会再练练手。先开始搭建Gitlab吧！Good luck！首先学到了一个更新系统软件包的一个命令： apt-get -y upgrade又学到了一个命令，删除一个系统用户的命令： userdel -r gi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gitlab的搭建与使用。">
+<meta property="og:url" content="http://happyhack.cn/2015/11/17/2015-11-17-Gitlab的搭建与使用.html">
+<meta property="og:site_name" content="Lucio">
+<meta property="og:description" content="今天接到一个任务是在公司的服务器上搭建一个私有的代码版本控制系统。查阅了很多的资料，因为是需要一个网站式的版本管理，所以最终选择了使用Gitlab。其实还可以使用本地的Github的。下次有机会再练练手。先开始搭建Gitlab吧！Good luck！首先学到了一个更新系统软件包的一个命令： apt-get -y upgrade又学到了一个命令，删除一个系统用户的命令： userdel -r gi">
+<meta property="og:image" content="http://offt6br14.bkt.clouddn.com/bolg/img/1_150707164216_1-300x201.jpg">
+<meta property="og:updated_time" content="2016-10-25T06:10:06.283Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Gitlab的搭建与使用。">
+<meta name="twitter:description" content="今天接到一个任务是在公司的服务器上搭建一个私有的代码版本控制系统。查阅了很多的资料，因为是需要一个网站式的版本管理，所以最终选择了使用Gitlab。其实还可以使用本地的Github的。下次有机会再练练手。先开始搭建Gitlab吧！Good luck！首先学到了一个更新系统软件包的一个命令： apt-get -y upgrade又学到了一个命令，删除一个系统用户的命令： userdel -r gi">
+<meta name="twitter:image" content="http://offt6br14.bkt.clouddn.com/bolg/img/1_150707164216_1-300x201.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6343210397461382000',
+      author: '本站最帅'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://happyhack.cn/2015/11/17/2015-11-17-Gitlab的搭建与使用.html"/>
+
+
+  <title> Gitlab的搭建与使用。 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Lucio</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">写博客是巩固知识的好方法</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Gitlab的搭建与使用。
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-11-17T15:51:54+08:00" content="2015-11-17">
+              2015-11-17
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/胡说/" itemprop="url" rel="index">
+                    <span itemprop="name">胡说</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/11/17/2015-11-17-Gitlab的搭建与使用.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/17/2015-11-17-Gitlab的搭建与使用.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/11/17/2015-11-17-Gitlab的搭建与使用.html" class="leancloud_visitors" data-flag-title="Gitlab的搭建与使用。">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://offt6br14.bkt.clouddn.com/bolg/img/1_150707164216_1-300x201.jpg" alt="gitlab"></p>
+<p>今天接到一个任务是在公司的服务器上搭建一个私有的代码版本控制系统。查阅了很多的资料，<br>因为是需要一个网站式的版本管理，所以最终选择了使用Gitlab。其实还可以使用本地的Github的。<br>下次有机会再练练手。先开始搭建Gitlab吧！Good luck！<br>首先学到了一个更新系统软件包的一个命令： apt-get -y upgrade<br>又学到了一个命令，删除一个系统用户的命令： userdel -r git 增加一个用户：<code>adduser git</code></p>
+<p>安装步骤：(<strong>文末有Gitlab一键安装包</strong>）</p>
+<p>##更新系统##<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">apt-get update </div><div class="line">apt-get upgrade </div><div class="line">**安装依赖包（编译 Ruby 以及 Ruby gems 的本地扩展）**</div><div class="line">sudo apt-get install -y build-essential zlib1g-dev libyaml-dev libssl-dev libgdbm-dev libreadline-dev libncurses5-dev libffi-dev curl openssh-server redis-server checkinstall libxml2-dev libxslt-dev libcurl4-openssl-dev libicu-dev logrotate python-docutils pkg-config cmake libkrb5-dev</div></pre></td></tr></table></figure></p>
+<h2 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install -y git-core</div></pre></td></tr></table></figure>
+<p>需要版本在 1.7.10 以上 <code>git --version</code></p>
+<p>如果已经安装了旧版本的 Git， 可以移除然后从源码编译安装最新版本<br><code>sudo apt-get remove git-core</code></p>
+<p>###安装依赖###<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install -y libcurl4-openssl-dev libexpat1-dev gettext libz-dev libssl-dev build-essential</div></pre></td></tr></table></figure></p>
+<p>###下载及编译安装###<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">cd /tmp </div><div class="line">curl -L --progress https://www.kernel.org/pub/software/scm/git/git-2.1.2.tar.gz </div><div class="line">tar xz cd git-2.1.2/ </div><div class="line">./configure make prefix=/usr/local all </div><div class="line">sudo make prefix=/usr/local install</div></pre></td></tr></table></figure></p>
+<p>安装成功之后，需要在之后的 GitLab 配置文件中设置一下 Git 的执行路径 （/usr/local/bin/git）</p>
+<p>##安装ruby##</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mkdir /tmp/ruby</div><div class="line">cd /tmp/ruby </div><div class="line">curl -L --progress http://cache.ruby-lang.org/pub/ruby/2.1/ruby-2.1.5.tar.gz  tar xz cd ruby-2.1.5 </div><div class="line">./configure --disable-install-rdoc </div><div class="line">make </div><div class="line">sudo make install</div></pre></td></tr></table></figure>
+<p><strong>在这过程中编译的时候回出现错误，readline.c 出现错误。需要根据提示进行修改</strong>！<br>将： <code>rl_pre_input_hook = (Function *)readline_pre_input_hook</code> 大概在1886行<br>修改：<code>rl_pre_input_hook = (rl_hook_func_t *)readline_pre_input_hook;</code><br>编译成功之后还需要：<br><code>gem install bundler --no-ri --no-rdoc</code><br>这里也会出现错误，下面我贴上错误的解决办法！</p>
+<p>是因为国内网络导致rubygems.org存放在Amazon S3上面的资源文件间歇性连接失败，用国内的RubyGems镜像(参见<a href="http://ruby.taobao.org/)替换官方镜像，方法如下：" target="_blank" rel="external">http://ruby.taobao.org/)替换官方镜像，方法如下：</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">gem sources --remove https://rubygems.org/ </div><div class="line">https://rubygems.org/ removed from sources</div><div class="line">gem sources -a https://ruby.taobao.org/</div><div class="line">https://ruby.taobao.org/ added to sources</div><div class="line">gem sources -l</div></pre></td></tr></table></figure></p>
+<h3 id="CURRENT-SOURCES"><a href="#CURRENT-SOURCES" class="headerlink" title="CURRENT SOURCES"></a>CURRENT SOURCES</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem install bundler --no-ri --no-rdoc</div></pre></td></tr></table></figure>
+<p>###给系统添加一个git账号###</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">adduser --disabled-login --gecos &apos;GitLab&apos; git</div></pre></td></tr></table></figure>
+<p>##安装数据库##<br>因为服务器已经有了数据库了，所以我就直接创建了相关库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CREATE DATABASE IF NOT EXISTS gitlabhq_production DEFAULT CHARACTER SET &apos;utf8&apos; COLLATE &apos;utf8_unicode_ci&apos;</div></pre></td></tr></table></figure></p>
+<p>###创建一个用户，用来控制相关的数据库：###<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">GRANT SELECT, LOCK TABLES, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER ON gitlabhq_production.* TO &apos;git&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;gitpwd&apos;</div></pre></td></tr></table></figure></p>
+<p>##安装Redis##<br>（有一些配置我没有配置，只是安装了而已，重启之后要记得启动redis）**<br>sudo apt-get install redis-server</p>
+<p>###Configure redis to use sockets##<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo cp /etc/redis/redis.conf /etc/redis/redis.conf.orig</div></pre></td></tr></table></figure></p>
+<p>###Disable Redis###</p>
+<p>listening on TCP by setting ‘port’ to 0 sed ‘s/^port .*/port 0/‘<br>/etc/redis/redis.conf.orig | sudo tee /etc/redis/redis.conf</p>
+<p>###Enable Redis###<br>socket for default Debian / Ubuntu path echo ‘unixsocket<br>/var/run/redis/redis.sock’ | sudo tee -a /etc/redis/redis.conf</p>
+<p>###Grant permission to the socket to all members of the redis group###</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo &apos;unixsocketperm 770&apos; | sudo tee -a /etc/redis/redis.conf</div></pre></td></tr></table></figure>
+<h3 id="Create-the-directory-which-contains-the-socket"><a href="#Create-the-directory-which-contains-the-socket" class="headerlink" title="Create the directory which contains the socket"></a>Create the directory which contains the socket</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkdir /var/run/redis chown redis:redis /var/run/redis chmod 755 /var/run/redis</div></pre></td></tr></table></figure>
+<p>###Persist###<br>the directory which contains the socket, if applicable if [ -d /etc/tmpfiles.d ]; then</p>
+<p>echo ‘d /var/run/redis 0755 redis redis 10d -‘ | sudo tee -a /etc/tmpfiles.d/redis.conf fi</p>
+<h3 id="Activate-the-changes-to-redis-conf"><a href="#Activate-the-changes-to-redis-conf" class="headerlink" title="Activate the changes to redis.conf"></a>Activate the changes to redis.conf</h3><p>sudo service redis-server restart</p>
+<h3 id="Add-git-to-the-redis-group"><a href="#Add-git-to-the-redis-group" class="headerlink" title="Add git to the redis group"></a>Add git to the redis group</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo usermod -aG redis git</div></pre></td></tr></table></figure>
+<p>##安装 GitLab##<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd /home/git</div><div class="line">git clone https://gitlab.com/gitlab-org/gitlab-ce.git -b 7-8-stable gitlab</div></pre></td></tr></table></figure></p>
+<p>###修改配置文件###<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cp config/gitlab.yml.example /config/gitlab.yml</div></pre></td></tr></table></figure></p>
+<p>###给文件夹添加相应的权限###<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">chown -R git log/</div><div class="line">chown -R git tmp/</div><div class="line">chown -R u+rwX log/</div><div class="line">chown -R u+rwX tmp/</div><div class="line">chown -R u+rwX tmp/pids/</div><div class="line">chown -R u+rwX tmp/sockets/</div><div class="line">chown -R u+rwX public/uploads/</div></pre></td></tr></table></figure></p>
+<p>###创建目录，并赋予相应的权限###<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir /home/git/gitlab-satellites</div><div class="line">chown u+rwx ,g=rx,o-rxw /home/git/gitlab_satellites</div></pre></td></tr></table></figure></p>
+<h3 id="编辑配置文件"><a href="#编辑配置文件" class="headerlink" title="编辑配置文件"></a>编辑配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cp config/unicorn.rb.example config/unicorn.rb</div><div class="line">vim config/unicorn.rb</div><div class="line">worker_processes XXX // CPU 核数</div></pre></td></tr></table></figure>
+<p><strong>在这里需要修改一下源，因为国内这体制。。。</strong><br><code>gem soucrces -l</code><br><strong>这里一定要删除一个源，只能留一个！</strong><br><code>gem source -r https://rubygems.org</code></p>
+<p><strong>如果你看到这里，我很抱歉的告诉你，我用以上方法之后</strong>然并卵<em>！也许是我接下来说的问题导致的吧*</em></p>
+<p>按照以上这些步骤我也不知道为什么，在搭建到最后配置nginx的时候，一直不成功，网站访问<br>不了，有可能有是我在搭建的过程中有一些错误吧，不过在我折腾了好几天之后终于用<br>一键安装包终于搭好了，尼玛，一键安装包也折腾了好久（一天的时间！）<br>这里记录一下我在这几天的搭建过程中所遇到的问题和所学到的东西吧！<br>首先我的一个错误就是IP地址的问题，在访问的IP时候我访问的是公网的IP，这其实应该是<br>局域网的IP的，我一只拿公网的IP折腾，绝逼打不开啊!<br>在这过程中我也顺便学会了用nginx代理两个以上的网站，就是在添加一个server段就ok了<br>当让前提是要让一个端口打开，哈哈，我会了这个之后我突然觉得我可以在公司的服务器上搭建我自己的博客了，以后来试试!<br>在这之中还要记住的一个是端口问题,我用一键安装包的时候遇到的问题就是这个东东,服务器的相应端口没有打开,导致我一只访问不了,我一直以为是我的搭建有问题呢!今早终于成功了!<br>查看一个端口的: <code>lsof -i:80</code><br>若要杀死一个占用端口的进程： kill 进程ID<br>查看已开服务： <code>netstat</code><br>-a (all)显示所有选项，默认不显示LISTEN相关<br>-t (tcp)仅显示tcp相关选项<br>-u (udp)仅显示udp相关选项<br>-n 拒绝显示别名，能显示数字的全部转化成数字。<br>-l 仅列出有在 Listen (监听) 的服務状态<br>-p 显示建立相关链接的程序名<br>-r 显示路由信息，路由表<br>-e 显示扩展信息，例如uid等<br>-s 按各个协议进行统计<br>-c 每隔一个固定时间，执行该netstat命令。<br>提示：LISTEN和LISTENING的状态只有用-a或者-l才能看到<br>这其中需要用防火墙的一个功能在打开或者关闭一个端口。<br>ibtables防火墙： ufw（笔记其他地方有记载）</p>
+<p>下面给出gitlab的一键安装的过程中需要注意的地方。<br>Gitlab一键安装包下载地址： <a href="https://bitnami.com/stack/gitlab" target="_blank" rel="external">https://bitnami.com/stack/gitlab</a><br>下载之后需要添加一个执行权限： <code>chmod +x /XXXXX</code><br>到所在目录执行这个文件： ./XXXX<br>接下来的安装就相对来说比较的简单了，不过在安装的过程中有要陪邮件服务器的步骤，这次的配置我直接略过了，下次有机会的时候在配置的时候在添加！<br>2015/11/12 13:41</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/gitlab/" rel="tag">#Gitlab</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/17/2015-11-17-Google字体的屏蔽.html" rel="next" title="2015-11-17-Google字体的屏蔽">
+                <i class="fa fa-chevron-left"></i> 2015-11-17-Google字体的屏蔽
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/17/2015-11-17-在Windows中使用Gitlab.html" rel="prev" title="在Windows中使用Gitlab">
+                在Windows中使用Gitlab <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/11/17/2015-11-17-Gitlab的搭建与使用.html"
+           data-title="Gitlab的搭建与使用。" data-url="http://happyhack.cn/2015/11/17/2015-11-17-Gitlab的搭建与使用.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/overwatch.jpg"
+               alt="Dong" />
+          <p class="site-author-name" itemprop="name">Dong</p>
+          <p class="site-description motion-element" itemprop="description">白开水好喝</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/hellowords" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-Git"><span class="nav-number">1.</span> <span class="nav-text">安装 Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CURRENT-SOURCES"><span class="nav-number">1.1.</span> <span class="nav-text">CURRENT SOURCES</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-the-directory-which-contains-the-socket"><span class="nav-number">1.2.</span> <span class="nav-text">Create the directory which contains the socket</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Activate-the-changes-to-redis-conf"><span class="nav-number">1.3.</span> <span class="nav-text">Activate the changes to redis.conf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-git-to-the-redis-group"><span class="nav-number">1.4.</span> <span class="nav-text">Add git to the redis group</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编辑配置文件"><span class="nav-number">1.5.</span> <span class="nav-text">编辑配置文件</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dong</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"happyhack"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Wavr7hJnsEUXQ15S6LeYYQfy-gzGzoHsz", "OnpaaLy5BrBenQxhJovAGaAP");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>

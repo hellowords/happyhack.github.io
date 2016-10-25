@@ -1,0 +1,787 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="navie," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="首先，假设这个程序员是一位职场新手甲。他刚大学毕业，没有工作经验。来自产品的需求，他要理解很久才能做。然后开发的过程中会遇到各种问题，如果经验不足以支撑他快速完成任务，那么只能求助于网络，书籍，熟人。如果这些都帮助不了他。他需要求助于同事。但是次数频繁，同事会厌倦于帮他解答；他也会羞于咨询。这时，他一天下来，基本都会卡在一个很简单的问题上。下班了，他还没有完成任务。没错，他需要加班了，因为他的编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="程序员为什么要加班（转）">
+<meta property="og:url" content="http://happyhack.cn/2016/10/20/2016-10-20程序员为什么要加班.html">
+<meta property="og:site_name" content="Lucio">
+<meta property="og:description" content="首先，假设这个程序员是一位职场新手甲。他刚大学毕业，没有工作经验。来自产品的需求，他要理解很久才能做。然后开发的过程中会遇到各种问题，如果经验不足以支撑他快速完成任务，那么只能求助于网络，书籍，熟人。如果这些都帮助不了他。他需要求助于同事。但是次数频繁，同事会厌倦于帮他解答；他也会羞于咨询。这时，他一天下来，基本都会卡在一个很简单的问题上。下班了，他还没有完成任务。没错，他需要加班了，因为他的编程">
+<meta property="og:updated_time" content="2016-10-25T06:49:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="程序员为什么要加班（转）">
+<meta name="twitter:description" content="首先，假设这个程序员是一位职场新手甲。他刚大学毕业，没有工作经验。来自产品的需求，他要理解很久才能做。然后开发的过程中会遇到各种问题，如果经验不足以支撑他快速完成任务，那么只能求助于网络，书籍，熟人。如果这些都帮助不了他。他需要求助于同事。但是次数频繁，同事会厌倦于帮他解答；他也会羞于咨询。这时，他一天下来，基本都会卡在一个很简单的问题上。下班了，他还没有完成任务。没错，他需要加班了，因为他的编程">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6343210397461382000',
+      author: '本站最帅'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://happyhack.cn/2016/10/20/2016-10-20程序员为什么要加班.html"/>
+
+
+  <title> 程序员为什么要加班（转） </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Lucio</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">写博客是巩固知识的好方法</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                程序员为什么要加班（转）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-20T16:32:00+08:00" content="2016-10-20">
+              2016-10-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/biubiu/" itemprop="url" rel="index">
+                    <span itemprop="name">BiuBiu</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/biubiu/吐嘈/" itemprop="url" rel="index">
+                    <span itemprop="name">吐嘈</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/20/2016-10-20程序员为什么要加班.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/20/2016-10-20程序员为什么要加班.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/20/2016-10-20程序员为什么要加班.html" class="leancloud_visitors" data-flag-title="程序员为什么要加班（转）">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>首先，假设这个程序员是一位职场新手甲。他刚大学毕业，没有工作经验。来自产品的需求，他要理解很久才能做。然后开发的过程中会遇到各种问题，如果经验不足以支撑他快速完成任务，那么只能求助于网络，书籍，熟人。如果这些都帮助不了他。他需要求助于同事。但是次数频繁，同事会厌倦于帮他解答；他也会羞于咨询。这时，他一天下来，基本都会卡在一个很简单的问题上。下班了，他还没有完成任务。没错，<strong>他需要加班了，因为他的编程能力非常差。</strong><br><a id="more"></a></p>
+<p>【经验之谈】程序员为什么要加班<br>大概没有人会知道他是因为需要处理一个并非高科技的问题。不懂技术的上司以为他是个勤奋的员工，非常看重他。可是，这什么进度还是会这么慢呢？创业的公司可等不起。这一切，如果招到一个有经验的开发人员，这一切的加班似乎都不需要。<br>好吧，公司开除了这名程序员或者他因“个人原因”辞职了或者公司再招到一个相对有经验的程序员乙。当然，有经验的代价就是公司要付双倍的薪水。所有之前的需求在他这边都没有遇到过加班的情况。他是一名非常有经验的程序员，他在过去的二年时间一直在处理相关的开发工作。到这边来，所有的问题都是小意思。他的优秀表现让公司惊喜和意外，公司觉得即使再招十个之前的员工也比不过他一个人。所以，双倍的薪水又有什么呢？<br>一段时间后，公司开始提各种各样的需求，他终于开始加班了。<strong>加班不是因为某段时间需求的总量多了。而是因为随着公司的快速发展，需求也越来越多样化。他的知识储备不足以令他总能轻松应付。</strong>他变得和第一个程序员一样，也加班了。只不过加班的原因不一样，第一个程序员是因为一些代码的调试的原因，而这位有经验的程序员是因为一些从没听说过的技术。他的加班让公司同样对他很重视，甚至认为是一位好伙伴。</p>
+<p>与此同时，公司在招他的时候也招进来了一名优秀的毕业生。他同样是一名没有经验的程序员，但是他有很好的学习能力。开发进度缓慢让产品人员和运营人员都难以接受。但是他总能在最后关头交付代码，尽管上线后需要修修补补。<strong>他经常加班来学习以便攻克技术难点</strong>，公司对加班的员工表示欢迎，因为没有人让他们加班，也不需要给他们加班费或者调休。公司为所有加班的人员提供良好的晚餐。他可以接大大小小的各种需求，只是，开发时间要比较长。但是他不会遇到那种代码调试不通过的简单的问题。相比程序员乙，程序员丙由于经常拖慢进度经常被产品和运营建议开除或者调岗。<br>可是后来，公司对他欣赏有加。原因有二：一是他终于可以用和程序员乙接近的时间来做任务；二是在程序员乙那里看似不可能的任务，程序员丙总能在最近关头给出解决方案和代码，只是时间比较长。产品和运营的观点发生了改变，向公司建议开除程序员乙。程序员丙是一个学习型的员工，时间让他有经验后，他成长成为一名更优秀的员工。</p>
+<p>公司有过教训后，终于不惜花重金去请各种优秀的程序员。因为只要有一名这样的程序员，就可以少请许多败坏项目的程序员。于是，公司有了程序员丁。他在过去的一段时间里有着不错的工作经历，帮助过所在的公司完成了各种重大的项目解决了相当多的行业技术难点。他的到来为公司带来了很好的活力，所有之前遇到的问题都不复存在。他成为了所有程序员的主管。后来，他还是加班了。<strong>因为公司的良好发展，于是聘请了更多的产品和运营。开发团队忙不过来了，他作为主管要求大家一起加班。</strong><br>为了缓解这种局面，他向公司申请增加程序员。公司答应了并再招了二各分别类似乙和丙的程序员，没错，公司不会再招聘类似甲的程序员。团队不需要加班了。</p>
+<p>好景持续不长久，一段时间后，加班的情况再次出现了，<strong>因为竞争对手的努力，让产品和运营提出更多的需求。</strong>他发现产品和运营的需求源源不断地输入。可是有些需求可能用户永远用不到或者三天后就变化了。为了解决这种局面，他找来领导和各部门的负责人来商讨解决的办法。有人提出走敏捷开发。公司决定新成立一个小团队来做测试。于是公司每一个敏捷开发团队成立了。时间证明了，这个新团队终于可以不加班了。而对需求的完成总体让产品和运营满意。</p>
+<p>乐观的局面总不能持续很久，<strong>因为线上出了一个令用户急剧下降的bug。他们需要加班通宵，或者回退代码，或者修复这个bug。</strong>没有使用很好的版本回退办法，只能是一场恶梦。持续集成和自动发布加入到他们的团队。没错，程序员丁开始在团队里实施非常好的项目管理的方案。起码发新版后，非工作时间在线上出bug，任何有权限的人员都可以轻松地一键回退。剩下的，上班再说。<br>… …</p>
+<p>这就是我要讲的程序员为什么要加班的几个故事，欢迎各位补充。以后我也会补充更多的故事。其实所有的后面都不重要，我只希望各位创业者，在招聘程序员时，避免遇到程序员甲，争取找到程序员丁。作为开发人员的我们，也要努力成为程序员丁，保证自己的职场竞争力。还是那句话，软件开发不是高科技的东西，这世上并没有软件科学家一说。我们能做的是让开发更像一门艺术。</p>
+<p>转载自:<a href="http://www.wuleba.com/?p=25238" target="_blank" rel="external">吾乐吧软件站</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/navie/" rel="tag">#navie</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/18/2016-08-18-拦截非法url请求.html" rel="next" title="拦截非法url请求">
+                <i class="fa fa-chevron-left"></i> 拦截非法url请求
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/22/2016-10-22-Bingo.html" rel="prev" title="Bingo">
+                Bingo <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/20/2016-10-20程序员为什么要加班.html"
+           data-title="程序员为什么要加班（转）" data-url="http://happyhack.cn/2016/10/20/2016-10-20程序员为什么要加班.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/overwatch.jpg"
+               alt="Dong" />
+          <p class="site-author-name" itemprop="name">Dong</p>
+          <p class="site-description motion-element" itemprop="description">白开水好喝</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/hellowords" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dong</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"happyhack"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Wavr7hJnsEUXQ15S6LeYYQfy-gzGzoHsz", "OnpaaLy5BrBenQxhJovAGaAP");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>

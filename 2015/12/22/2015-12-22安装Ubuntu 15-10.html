@@ -1,0 +1,787 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ubuntu," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="最近换新电脑，准备在里面装ubuntu15-10用过国内的ubuntu，感觉不是太好，尝试了传统ubuntu因为我是双系统，所以在安装过程中有所区别，记得在看《鸟哥Linux》这本书的时候，里面说过装系统不装10次以上不算真正会装系统哦～目前我差不多有10次了吧～哈哈。在安装的过程中主要确定系统要运行那些东西，从而来分配内存。/boot 200M吧，因为更新的时候，有时会忘记删除老版本的linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装Ubuntu 15-10">
+<meta property="og:url" content="http://happyhack.cn/2015/12/22/2015-12-22安装Ubuntu 15-10.html">
+<meta property="og:site_name" content="Lucio">
+<meta property="og:description" content="最近换新电脑，准备在里面装ubuntu15-10用过国内的ubuntu，感觉不是太好，尝试了传统ubuntu因为我是双系统，所以在安装过程中有所区别，记得在看《鸟哥Linux》这本书的时候，里面说过装系统不装10次以上不算真正会装系统哦～目前我差不多有10次了吧～哈哈。在安装的过程中主要确定系统要运行那些东西，从而来分配内存。/boot 200M吧，因为更新的时候，有时会忘记删除老版本的linux">
+<meta property="og:image" content="http://offt6br14.bkt.clouddn.com/bolg/img/2015-12-22-21-27-44%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png">
+<meta property="og:image" content="http://offt6br14.bkt.clouddn.com/bolg/img/2015-12-22.png">
+<meta property="og:updated_time" content="2016-10-25T06:10:06.314Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="安装Ubuntu 15-10">
+<meta name="twitter:description" content="最近换新电脑，准备在里面装ubuntu15-10用过国内的ubuntu，感觉不是太好，尝试了传统ubuntu因为我是双系统，所以在安装过程中有所区别，记得在看《鸟哥Linux》这本书的时候，里面说过装系统不装10次以上不算真正会装系统哦～目前我差不多有10次了吧～哈哈。在安装的过程中主要确定系统要运行那些东西，从而来分配内存。/boot 200M吧，因为更新的时候，有时会忘记删除老版本的linux">
+<meta name="twitter:image" content="http://offt6br14.bkt.clouddn.com/bolg/img/2015-12-22-21-27-44%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6343210397461382000',
+      author: '本站最帅'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://happyhack.cn/2015/12/22/2015-12-22安装Ubuntu 15-10.html"/>
+
+
+  <title> 安装Ubuntu 15-10 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Lucio</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">写博客是巩固知识的好方法</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                安装Ubuntu 15-10
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-22T10:45:40+08:00" content="2015-12-22">
+              2015-12-22
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ubuntu/" itemprop="url" rel="index">
+                    <span itemprop="name">Ubuntu</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/22/2015-12-22安装Ubuntu 15-10.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/22/2015-12-22安装Ubuntu 15-10.html" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2015/12/22/2015-12-22安装Ubuntu 15-10.html" class="leancloud_visitors" data-flag-title="安装Ubuntu 15-10">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近换新电脑，准备在里面装ubuntu15-10<br>用过国内的ubuntu，感觉不是太好，尝试了传统ubuntu<br>因为我是双系统，所以在安装过程中有所区别，记得在看《鸟哥Linux》这本书的时候，里面说过装系统不装10次以上不算真正会装系统哦～目前我差不多有10次了吧～哈哈。<br>在安装的过程中主要确定系统要运行那些东西，从而来分配内存。<br><code>/boot</code> 200M吧，因为更新的时候，有时会忘记删除老版本的linux内核文件，所以导致老是会提示<code>/boot</code>磁盘已满<br><a id="more"></a><br><strong>进入/boot，查看里面内容，然后查看目前用哪个版本的内核 :  <code>uname -a</code>  删除其他内核，一般保留前两个内核</strong><br><strong>以防不测～，或者在每次更系之后 : <code>sudo apt-get autoremove</code>  来清理早期版本；</strong></p>
+<p>由于经验不足，在购买USB无线网卡的时候，没有考虑网卡的驱动ubuntu有没有支持的，导致装完之后不能联网！<br>这真是一个忧伤的事情！一天的折腾之后能上网了（还没解决手中USB网卡驱动问题，通过别的方式上网）<br>接下来就是系统更新blabla～<br>安装一些必要软件：</p>
+<h5 id="VIM"><a href="#VIM" class="headerlink" title="VIM"></a><strong>VIM</strong></h5><pre><code>print           
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install vim</div></pre></td></tr></table></figure>
+<h5 id="Git"><a href="#Git" class="headerlink" title="Git"></a><strong>Git</strong></h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install git</div></pre></td></tr></table></figure>
+<h5 id="Chrome"><a href="#Chrome" class="headerlink" title="Chrome"></a><strong>Chrome</strong></h5><blockquote>
+<p>   (需FQ）<a href="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" target="_blank" rel="external">下载地址</a> 下载最新的安装文件</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install libappindicator1 libindicator7</div><div class="line">sudo dpkg -i google-chrome-stable_current_amd64.deb</div><div class="line">sudo apt-get <span class="_">-f</span> install</div><div class="line">sudo apt-get install  chrome</div></pre></td></tr></table></figure>
+<p>这里推荐两款软件，菜单工具栏，系统状态栏（CPU，内存）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:diesch/testing</div><div class="line">sudo add-apt-repository ppa:nilarimogard/webupd8</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install classicmenu-indicator</div><div class="line">sudo apt-get install syspeek</div></pre></td></tr></table></figure></p>
+<p>附上软件截图</p>
+<p><img src="http://offt6br14.bkt.clouddn.com/bolg/img/2015-12-22-21-27-44%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt="2015-12-22 21-26-32屏幕截图"><br><img src="http://offt6br14.bkt.clouddn.com/bolg/img/2015-12-22.png" alt="2015-12-22 21-27-44屏幕截图"></p>
+<p>我安装了一些影音软件，VLC播放器。音乐播放器。<br>不知道为什么我在设置系统默认编辑器的时候，改不了gedit，我设置为VIM，重启之后还是gedit，最次的方法就是<br>删除gedit这类软件，只留VIM。</p>
+<p>因为是双系统，所以在ubuntu访问window系统磁盘的时候出现啦不能访问的错误，需要用ntfs-3g 命令解决<br>安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install ntfs-3g</div></pre></td></tr></table></figure></p>
+<p>需要访问哪一个盘就用命令加上哪个磁盘的号<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo ntfsfix /dev/sda6</div></pre></td></tr></table></figure></p>
+<p>进行修复！</p>
+<p>以上。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ubuntu/" rel="tag">#ubuntu</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/21/2015-12-21-WAMP server PHPMyAdmin.html" rel="next" title="WAMP server PHPMyAdmin 访问错误">
+                <i class="fa fa-chevron-left"></i> WAMP server PHPMyAdmin 访问错误
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/23/2015-12-23-vim常用命令.html" rel="prev" title="vim常用命令">
+                vim常用命令 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/12/22/2015-12-22安装Ubuntu 15-10.html"
+           data-title="安装Ubuntu 15-10" data-url="http://happyhack.cn/2015/12/22/2015-12-22安装Ubuntu 15-10.html">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/overwatch.jpg"
+               alt="Dong" />
+          <p class="site-author-name" itemprop="name">Dong</p>
+          <p class="site-description motion-element" itemprop="description">白开水好喝</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/hellowords" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#VIM"><span class="nav-number">1.</span> <span class="nav-text">VIM</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Git"><span class="nav-number">2.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Chrome"><span class="nav-number">3.</span> <span class="nav-text">Chrome</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dong</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"happyhack"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Wavr7hJnsEUXQ15S6LeYYQfy-gzGzoHsz", "OnpaaLy5BrBenQxhJovAGaAP");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>
