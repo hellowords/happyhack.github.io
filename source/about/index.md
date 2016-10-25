@@ -1,5 +1,13 @@
 ---
-title: about
-date: 2016-10-22 03:54:11
-comments : false
+title: 关于
+id: 2
+comment: false
+date: 2015-11-15 21:11:10
+updated: 2016-10-25 14:52:26
 ---
+
+### 博客历程
+
+2015年11月16日 博客上线
+2015年11月17日 优化博客，更换主题
+2016年10月21日 从Wordpress 迁移到 hexo
