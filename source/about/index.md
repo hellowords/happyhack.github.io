@@ -1,7 +1,7 @@
 ---
 title: 关于
 id: 2
-comment: false
+comments: false
 date: 2015-11-15 21:11:10
 updated: 2016-10-25 14:52:26
 ---

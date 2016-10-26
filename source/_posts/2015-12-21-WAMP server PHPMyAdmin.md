@@ -1,10 +1,11 @@
 ---
 title: WAMP server PHPMyAdmin 访问错误
 tags:
-  - 运维
+  - wampserve
+  - php
 id: 102
 categories:
-  - 胡说
+  - Solution
 date: 2015-12-21 14:33:39
 ---
 
