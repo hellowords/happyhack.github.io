@@ -27,10 +27,17 @@ permalink:
 		× 号表示当前使用的版本，`nvm use 4.6.1` 使用4.6.1版本。
 	2. Linux
 		* 安装 nvm
+		打开终端运行：
+		`curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash`
+		脚本下载完成会自动运行安装,安装完成之后**重新打开终端**，输入`nvm`出现以下画面表示安装成功
+		![ubuntu-nvm by happyhack.cn](http://offt6br14.bkt.clouddn.com/bolg/img/ubuntu-nvm.png)
 		* 安装 node.js
+		通过**nvm**安装**node.js** `nvm install 6.9.1`
+		耐心等待，安装成功之后`nvm ls` 列出已经安装的版本
+		![ubuntu-nodejs by happyhack.cn](http://offt6br14.bkt.clouddn.com/bolg/img/ubuntu-nodejs.png)
 	3. Mac
 		(木有Mac~)
-	
+		
 ##### [Git](https://git-scm.com/)
 1. Windows
 	[下载链接](https://git-scm.com/) 可以无脑下一步...配置帐号之类请看这篇 [博文](http://happyhack.cn/2015/12/21/2015-12-21-%E5%B8%B8%E7%94%A8Git%E5%91%BD%E4%BB%A4.html)
