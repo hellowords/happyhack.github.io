@@ -1,9 +1,12 @@
 ---
 title: 使用Git管理hexo博客
 date: 2016-10-25 15:29:16
-updated: 2016-10-25 17:52:32
+updated: 2016-10-27 20:24:12
 tags:
-categories:
+	- Git
+	- Hexo
+categories: 
+	- Solution
 permalink:
 ---
 
