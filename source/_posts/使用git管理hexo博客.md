@@ -18,6 +18,7 @@ permalink:
 	##### [Node.js](https://nodejs.org/zh-cn/)
 > 开个VPN访问更快  使用`nvm` 来安装`node.js` 
 
+<!-- more -->
 	1. Windows 
 		* 安装 nvm
 		讲道理nvm是没有Windows版本的，我从github上找到一个windows安装的方法 [点我！](https://github.com/coreybutler/nvm-windows) 
