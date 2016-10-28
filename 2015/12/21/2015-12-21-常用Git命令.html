@@ -18,6 +18,8 @@
 
 
 
+  <meta name="google-site-verification" content="google7e83a01f3b19eb51.html" />
+
 
 
 
@@ -68,7 +70,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Gitlab,Git," />
+  <meta name="keywords" content="Git," />
 
 
 
@@ -100,7 +102,7 @@ git config -l查看所有当前的git配置！
 接下来是将文件添加到缓存当中去，使用git add 文件名 或者 git add -a git add .  将目录下的所有文件递归的放入缓存中去。
 使用 git status  可以查看我们项目当前的状态（即文件被追踪的情况）
 使用git status -s">
-<meta property="og:updated_time" content="2016-10-25T06:10:06.314Z">
+<meta property="og:updated_time" content="2016-10-28T08:30:30.335Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常用Git命令">
 <meta name="twitter:description" content="首先服务器要安装Git，然后到根目录下面去初始化一个Git仓库：
@@ -116,7 +118,7 @@ git config -l查看所有当前的git配置！
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
+    sidebar: {"position":"left","display":"hide"},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -139,6 +141,15 @@ git config -l查看所有当前的git配置！
 
   
 
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-86340986-1', 'auto');
+  ga('send', 'pageview');
+</script>
 
 
 
@@ -287,6 +298,11 @@ git config -l查看所有当前的git配置！
             <time itemprop="dateCreated" datetime="2015-12-21T12:49:02+08:00" content="2015-12-21">
               2015-12-21
             </time>
+            &nbsp; | &nbsp;
+            <span class="post-meta-item-text">更新</span>
+            <time itemprop="dateCreated" datetime="2015-12-21T12:49:02+08:00" content="2015-12-21">
+              2016-10-28
+            </time>
           </span>
 
           
@@ -375,6 +391,9 @@ git config -l查看所有当前的git配置！
 <li><code>git fetch</code>: 获取服务器端的改动，比如其他用户新建了一个分支并push到了服务器，运行这个命令之后会得到这个分支的信息</li>
 <li>解决<code>git push</code>时候的错误：Could not resolve hostname …remote repository   这是ssh 与github链接不稳定</li>
 <li>使用 ssh -T <a href="mailto:git@git" target="_blank" rel="external">git@git</a>hub.com       即可～～～</li>
+<li>github网站创建好项目，本地将项目推到github中 <code>git remote add origin git@github.com:yourname/...</code><br>如果出现错误可能是.git/config 文件中URL 的设置问题，可以使用 <code>git remote set-url origin git@github.com:yourname/Mybolg.git</code> 进行远程仓库的提交</li>
+<li><strong>.gitignore</strong> 文件用于忽略文件的进行提交。前提是该文件没有写入快照中！（ .gitignore只适用于尚未添加到git库的文件。如果已经添加了，则需用<code>git rm</code>移除后再重新commit）</li>
+<li>删除本地或者远程一个分支： <code>git push origin --delete branchname</code></li>
 </ul>
 
       
@@ -397,8 +416,6 @@ git config -l查看所有当前的git配置！
     <footer class="post-footer">
       
         <div class="post-tags">
-          
-            <a href="/tags/gitlab/" rel="tag">#Gitlab</a>
           
             <a href="/tags/git/" rel="tag">#Git</a>
           
@@ -491,7 +508,7 @@ git config -l查看所有当前的git配置！
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -499,7 +516,7 @@ git config -l查看所有当前的git配置！
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -508,7 +525,7 @@ git config -l查看所有当前的git配置！
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -538,6 +555,20 @@ git config -l查看所有当前的git配置！
 
         
         
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.itechzero.cn/" title="ZERO" target="_blank">ZERO</a>
+                </li>
+              
+            </ul>
+          </div>
+        
 
       </section>
 
@@ -566,7 +597,7 @@ git config -l查看所有当前的git配置！
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2015 - 
   <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -584,8 +615,33 @@ git config -l查看所有当前的git配置！
     NexT.Muse
   </a>
 </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
+  ga('create', 'UA-86340986-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
         
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">很高兴遇见你,第<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>小伙伴</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
 
         
       </div>
@@ -805,6 +861,21 @@ git config -l查看所有当前的git配置！
 
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 
