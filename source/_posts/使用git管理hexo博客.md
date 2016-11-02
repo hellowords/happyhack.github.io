@@ -12,35 +12,34 @@ permalink:
 
 将博客放到Github上，通过Github实现多终端管理博客 
 
-#### 搭建步骤
-1. [**安装必要软件**](https://hexo.io/zh-cn/docs/)
-
-	##### [Node.js](https://nodejs.org/zh-cn/)
+#### 搭建步骤 ####
+[**安装必要软件**](https://hexo.io/zh-cn/docs/)
+##### [Node.js](https://nodejs.org/zh-cn/) #####
 > 开个VPN访问更快  使用`nvm` 来安装`node.js` 
 
 <!-- more -->
-	1. Windows 
-		* 安装 nvm
-		讲道理nvm是没有Windows版本的，我从github上找到一个windows安装的方法 [点我！](https://github.com/coreybutler/nvm-windows) 
-		[下载链接](https://github.com/coreybutler/nvm-windows/releases) 选`nvm-setup.zip` 安装完成之后，记得增加环境变量，`win+r` 输入`cmd` 打
-		开命令终端，在终端输入`nvm` 出现信息则安装成功。
-		* 安装 node.js
-		Node.js的版本很多，选择安装版本号，在命令行中`nvm install 4.6.1` （**开个VPN~**）
-		耐心等待一段时间...
-		![nvm安装By happyhack.cn](http://offt6br14.bkt.clouddn.com/bolg/img/nvm.png)
-		× 号表示当前使用的版本，`nvm use 4.6.1` 使用4.6.1版本。
-	2. Linux
-		* 安装 nvm
-		打开终端运行：
-		`curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash`
-		脚本下载完成会自动运行安装,安装完成之后**重新打开终端**，输入`nvm`出现以下画面表示安装成功
-		![ubuntu-nvm by happyhack.cn](http://offt6br14.bkt.clouddn.com/bolg/img/ubuntu-nvm.png)
-		* 安装 node.js
-		通过**nvm**安装**node.js** `nvm install 6.9.1`
-		耐心等待，安装成功之后`nvm ls` 列出已经安装的版本
-		![ubuntu-nodejs by happyhack.cn](http://offt6br14.bkt.clouddn.com/bolg/img/ubuntu-nodejs.png)
-	3. Mac
-		(木有Mac~)
+1. Windows 
+	* 安装 nvm
+	讲道理nvm是没有Windows版本的，我从github上找到一个windows安装的方法 [点我！](https://github.com/coreybutler/nvm-windows) 
+	[下载链接](https://github.com/coreybutler/nvm-windows/releases) 选`nvm-setup.zip` 安装完成之后，记得增加环境变量，`win+r` 输入`cmd` 打
+	开命令终端，在终端输入`nvm` 出现信息则安装成功。
+	* 安装 node.js
+	Node.js的版本很多，选择安装版本号，在命令行中`nvm install 4.6.1` （**开个VPN~**）
+	耐心等待一段时间...
+	![nvm安装By happyhack.cn](http://offt6br14.bkt.clouddn.com/bolg/img/nvm.png)
+	× 号表示当前使用的版本，`nvm use 4.6.1` 使用4.6.1版本。
+2. Linux
+	* 安装 nvm
+	打开终端运行：
+	`curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash`
+	脚本下载完成会自动运行安装,安装完成之后**重新打开终端**，输入`nvm`出现以下画面表示安装成功
+	![ubuntu-nvm by happyhack.cn](http://offt6br14.bkt.clouddn.com/bolg/img/ubuntu-nvm.png)
+	* 安装 node.js
+	通过**nvm**安装**node.js** `nvm install 6.9.1`
+	耐心等待，安装成功之后`nvm ls` 列出已经安装的版本
+	![ubuntu-nodejs by happyhack.cn](http://offt6br14.bkt.clouddn.com/bolg/img/ubuntu-nodejs.png)
+3. Mac
+	(木有Mac~)
 		
 ##### [Git](https://git-scm.com/)
 1. Windows
