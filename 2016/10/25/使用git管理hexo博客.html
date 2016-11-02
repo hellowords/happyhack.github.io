@@ -87,8 +87,7 @@
 
 
 <meta name="description" content="将博客放到Github上，通过Github实现多终端管理博客 
-搭建步骤
-安装必要软件
+搭建步骤安装必要软件
 Node.js
 开个VPN访问更快  使用nvm 来安装node.js">
 <meta property="og:type" content="article">
@@ -96,18 +95,20 @@ Node.js
 <meta property="og:url" content="http://happyhack.cn/2016/10/25/使用git管理hexo博客.html">
 <meta property="og:site_name" content="Lucio">
 <meta property="og:description" content="将博客放到Github上，通过Github实现多终端管理博客 
-搭建步骤
-安装必要软件
+搭建步骤安装必要软件
 Node.js
 开个VPN访问更快  使用nvm 来安装node.js">
+<meta property="og:image" content="http://offt6br14.bkt.clouddn.com/bolg/img/nvm.png">
+<meta property="og:image" content="http://offt6br14.bkt.clouddn.com/bolg/img/ubuntu-nvm.png">
+<meta property="og:image" content="http://offt6br14.bkt.clouddn.com/bolg/img/ubuntu-nodejs.png">
 <meta property="og:updated_time" content="2016-10-27T12:24:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Git管理hexo博客">
 <meta name="twitter:description" content="将博客放到Github上，通过Github实现多终端管理博客 
-搭建步骤
-安装必要软件
+搭建步骤安装必要软件
 Node.js
 开个VPN访问更快  使用nvm 来安装node.js">
+<meta name="twitter:image" content="http://offt6br14.bkt.clouddn.com/bolg/img/nvm.png">
 
 
 
@@ -361,37 +362,25 @@ Node.js
 
       
         <p>将博客放到Github上，通过Github实现多终端管理博客 </p>
-<h4 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h4><ol>
-<li><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external"><strong>安装必要软件</strong></a></p>
+<h4 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h4><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external"><strong>安装必要软件</strong></a></p>
 <h5 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a><a href="https://nodejs.org/zh-cn/" target="_blank" rel="external">Node.js</a></h5><blockquote>
 <p>开个VPN访问更快  使用<code>nvm</code> 来安装<code>node.js</code> </p>
 </blockquote>
-</li>
-</ol>
 <a id="more"></a>
-<pre><code>1. Windows 
-    * 安装 nvm
-    讲道理nvm是没有Windows版本的，我从github上找到一个windows安装的方法 [点我！](https://github.com/coreybutler/nvm-windows) 
-    [下载链接](https://github.com/coreybutler/nvm-windows/releases) 选`nvm-setup.zip` 安装完成之后，记得增加环境变量，`win+r` 输入`cmd` 打
-    开命令终端，在终端输入`nvm` 出现信息则安装成功。
-    * 安装 node.js
-    Node.js的版本很多，选择安装版本号，在命令行中`nvm install 4.6.1` （**开个VPN~**）
-    耐心等待一段时间...
-    ![nvm安装By happyhack.cn](http://offt6br14.bkt.clouddn.com/bolg/img/nvm.png)
-    × 号表示当前使用的版本，`nvm use 4.6.1` 使用4.6.1版本。
-2. Linux
-    * 安装 nvm
-    打开终端运行：
-    `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash`
-    脚本下载完成会自动运行安装,安装完成之后**重新打开终端**，输入`nvm`出现以下画面表示安装成功
-    ![ubuntu-nvm by happyhack.cn](http://offt6br14.bkt.clouddn.com/bolg/img/ubuntu-nvm.png)
-    * 安装 node.js
-    通过**nvm**安装**node.js** `nvm install 6.9.1`
-    耐心等待，安装成功之后`nvm ls` 列出已经安装的版本
-    ![ubuntu-nodejs by happyhack.cn](http://offt6br14.bkt.clouddn.com/bolg/img/ubuntu-nodejs.png)
-3. Mac
-    (木有Mac~)
-</code></pre><h5 id="Git"><a href="#Git" class="headerlink" title="Git"></a><a href="https://git-scm.com/" target="_blank" rel="external">Git</a></h5><ol>
+<ol>
+<li>Windows <ul>
+<li>安装 nvm<br>讲道理nvm是没有Windows版本的，我从github上找到一个windows安装的方法 <a href="https://github.com/coreybutler/nvm-windows" target="_blank" rel="external">点我！</a><br><a href="https://github.com/coreybutler/nvm-windows/releases" target="_blank" rel="external">下载链接</a> 选<code>nvm-setup.zip</code> 安装完成之后，记得增加环境变量，<code>win+r</code> 输入<code>cmd</code> 打<br>开命令终端，在终端输入<code>nvm</code> 出现信息则安装成功。</li>
+<li>安装 node.js<br>Node.js的版本很多，选择安装版本号，在命令行中<code>nvm install 4.6.1</code> （<strong>开个VPN~</strong>）<br>耐心等待一段时间…<br><img src="http://offt6br14.bkt.clouddn.com/bolg/img/nvm.png" alt="nvm安装By happyhack.cn"><br>× 号表示当前使用的版本，<code>nvm use 4.6.1</code> 使用4.6.1版本。</li>
+</ul>
+</li>
+<li>Linux<ul>
+<li>安装 nvm<br>打开终端运行：<br><code>curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash</code><br>脚本下载完成会自动运行安装,安装完成之后<strong>重新打开终端</strong>，输入<code>nvm</code>出现以下画面表示安装成功<br><img src="http://offt6br14.bkt.clouddn.com/bolg/img/ubuntu-nvm.png" alt="ubuntu-nvm by happyhack.cn"></li>
+<li>安装 node.js<br>通过<strong>nvm</strong>安装<strong>node.js</strong> <code>nvm install 6.9.1</code><br>耐心等待，安装成功之后<code>nvm ls</code> 列出已经安装的版本<br><img src="http://offt6br14.bkt.clouddn.com/bolg/img/ubuntu-nodejs.png" alt="ubuntu-nodejs by happyhack.cn"></li>
+</ul>
+</li>
+<li>Mac<br> (木有Mac~)</li>
+</ol>
+<h5 id="Git"><a href="#Git" class="headerlink" title="Git"></a><a href="https://git-scm.com/" target="_blank" rel="external">Git</a></h5><ol>
 <li>Windows<br> <a href="https://git-scm.com/" target="_blank" rel="external">下载链接</a> 可以无脑下一步…配置帐号之类请看这篇 <a href="http://happyhack.cn/2015/12/21/2015-12-21-%E5%B8%B8%E7%94%A8Git%E5%91%BD%E4%BB%A4.html">博文</a></li>
 <li>Linux(Ubuntu)<br> <code>$ sudo apt-get install git</code></li>
 </ol>
@@ -517,7 +506,7 @@ Node.js
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-count">26</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -534,7 +523,7 @@ Node.js
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
