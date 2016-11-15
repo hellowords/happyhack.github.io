@@ -316,7 +316,7 @@ busuanzi_count:
   # custom uv span for the whole site
   site_uv: true
   site_uv_header: 很高兴遇见你,第
-  site_uv_footer: 小伙伴
+  site_uv_footer: 位小伙伴
   # custom pv span for the whole site
   site_pv: true
   site_pv_header: <i class="fa fa-eye"></i>
