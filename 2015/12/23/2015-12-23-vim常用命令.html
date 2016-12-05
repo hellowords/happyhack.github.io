@@ -86,16 +86,16 @@
 
 
 
-<meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849:scriptnames     查看VIM加载的文件w e          向后/前移动一个单词 2w 移动两个单词d          删除操作符 d 加位移命令就是删除某些，如dfs 删除到s,f查找到sd2w">
+<meta name="description" content="记录下vim常用命令">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vim常用命令">
 <meta property="og:url" content="http://happyhack.cn/2015/12/23/2015-12-23-vim常用命令.html">
 <meta property="og:site_name" content="Lucio">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849:scriptnames     查看VIM加载的文件w e          向后/前移动一个单词 2w 移动两个单词d          删除操作符 d 加位移命令就是删除某些，如dfs 删除到s,f查找到sd2w">
-<meta property="og:updated_time" content="2016-10-25T06:10:06.314Z">
+<meta property="og:description" content="记录下vim常用命令">
+<meta property="og:updated_time" content="2016-12-05T07:35:12.012Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vim常用命令">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849:scriptnames     查看VIM加载的文件w e          向后/前移动一个单词 2w 移动两个单词d          删除操作符 d 加位移命令就是删除某些，如dfs 删除到s,f查找到sd2w">
+<meta name="twitter:description" content="记录下vim常用命令">
 
 
 
@@ -286,7 +286,7 @@
             &nbsp; | &nbsp;
             <span class="post-meta-item-text">更新</span>
             <time itemprop="dateCreated" datetime="2015-12-23T09:24:54+08:00" content="2015-12-23">
-              2016-10-25
+              2016-12-05
             </time>
           </span>
 
@@ -348,7 +348,9 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">:scriptnames     查看VIM加载的文件</div><div class="line">w e          向后/前移动一个单词 2w 移动两个单词</div><div class="line">d          删除操作符 d 加位移命令就是删除某些，如dfs 删除到s,f查找到s</div><div class="line">d2w          删除2个word , d$ 删除到最后</div><div class="line">c          修改操作符 cwhi 将当前单词修改为hi</div><div class="line">dd cc          dd删除整行，cc同，不过保持原来的缩进</div><div class="line">D S          D:d$  S:cc</div><div class="line">$ ^          移动到行尾/前</div><div class="line">fX          查找X向后 F 反向</div><div class="line">t/T          也是查找，只不过是光标是在说查字符的前一个</div><div class="line">%          用来匹配括弧</div><div class="line">6j          光标下移6行</div><div class="line">G g          光标移动指定行，G:光标最后一行，gg:第一行，6G:第六行</div><div class="line">H M L          在显示屏幕区域移动，H:home, M:middle ,l:last</div><div class="line">Ctrl+D E Y     滚动屏幕</div><div class="line">CTRL+u          删除已经键入的内容</div><div class="line">CTRL+w          删除光标后一个单词</div><div class="line">zt zb          zt 当前行至于屏幕顶端，zb 相反</div><div class="line">/word          全文搜索word , n 向下继续搜索，? 反向</div><div class="line">:hlserach     高亮显示搜索结果，nohlserach 反</div><div class="line">:incsearch     及时搜索 匹配正则搜索更加厉害～</div><div class="line">`` CTRL+o i     光标的跳转，``调至上一次光标位置，CTRL+o则是更早位置</div><div class="line">:jumps          列出曾经跳转过位置的列表</div><div class="line">ma mq ...     有名标记，标记某一个位置为a,b...</div><div class="line">`a `b `...     跳至自定义光标的位置</div><div class="line">:marks          列出自定义的特别标记</div><div class="line">.          重复上一次的动作/改动</div><div class="line">Visual          可是模式 v 进入可是模式 V 一样，但是选择整行</div><div class="line">CTRL+V          文本块的模式位移 在次模式下选择号文本块之后I，A可以对选择文本进行更改;~,U,u对文本块大小写转换</div><div class="line">p P          从寄存器中取回内容</div><div class="line">map W gg     使W 映射成为gg 命令</div><div class="line">:set list     查看TAB，与空格</div><div class="line">:set filetype     查看文件用的神码语言</div><div class="line">&quot;ay &quot;ap          将内容复制到寄存器a中，在将a寄存器中的内容粘贴</div><div class="line">:write &amp;gt;&amp;gt; file     将当前文件追加到file文件中 也可以与可是模式使用，选择需要的内容追加到文件内容中</div><div class="line">:split :close     多窗口显示文件，CTRL+w在窗口中切换; :split open ,:close close</div><div class="line">:4split hi.c     以4行的高度，打开hi.c文件</div><div class="line">:vsplit          是垂直分割窗口</div><div class="line">:only          关闭其他所有窗口</div><div class="line">:qall :wall     退出，保存所有窗口</div><div class="line">vimdiff 1.c 2.c     比较两个文件的不同之处 zo 展开折叠行，zc折叠</div><div class="line">:diffupdate     时时更新对应的高亮显示---&amp;gt;详细参考手册：</div><div class="line">gq3j  gggqG     gq3j格式化以下三行文本，gggqG格式化全区</div><div class="line">:read !ls     读取当前目录下的内容写入文本中</div><div class="line">:%s/hi/hello/g     将文本中所有带有hi的字符，替换为hello     这里匹配正则更加</div><div class="line">vim *.c          可以将当前路径中的一些文件内容进行替换，当然要加匹配规则啦</div><div class="line">g CTRL+g     统计文本字数，加上正则规则可以更花哨～</div><div class="line">K          对于写shell脚本，或者C程序时，将光标移到函数关键字上按K会出来man哦～</div><div class="line">:sc CRRL+d     在用tab建自动补全命令时，可以使用CTRL+d 列出命令列表</div></pre></td></tr></table></figure>
+        <p>记录下vim常用命令</p>
+<a id="more"></a>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">:scriptnames     查看VIM加载的文件</div><div class="line">w e          向后/前移动一个单词 2w 移动两个单词</div><div class="line">d          删除操作符 d 加位移命令就是删除某些，如dfs 删除到s,f查找到s</div><div class="line">d2w          删除2个word , d$ 删除到最后</div><div class="line">c          修改操作符 cwhi 将当前单词修改为hi</div><div class="line">dd cc          dd删除整行，cc同，不过保持原来的缩进</div><div class="line">D S          D:d$  S:cc</div><div class="line">$ ^          移动到行尾/前</div><div class="line">fX          查找X向后 F 反向</div><div class="line">t/T          也是查找，只不过是光标是在说查字符的前一个</div><div class="line">%          用来匹配括弧</div><div class="line">6j          光标下移6行</div><div class="line">G g          光标移动指定行，G:光标最后一行，gg:第一行，6G:第六行</div><div class="line">H M L          在显示屏幕区域移动，H:home, M:middle ,l:last</div><div class="line">Ctrl+D E Y     滚动屏幕</div><div class="line">CTRL+u          删除已经键入的内容</div><div class="line">CTRL+w          删除光标后一个单词</div><div class="line">zt zb          zt 当前行至于屏幕顶端，zb 相反</div><div class="line">/word          全文搜索word , n 向下继续搜索，? 反向</div><div class="line">:hlserach     高亮显示搜索结果，nohlserach 反</div><div class="line">:incsearch     及时搜索 匹配正则搜索更加厉害～</div><div class="line">`` CTRL+o i     光标的跳转，``调至上一次光标位置，CTRL+o则是更早位置</div><div class="line">:jumps          列出曾经跳转过位置的列表</div><div class="line">ma mq ...     有名标记，标记某一个位置为a,b...</div><div class="line">`a `b `...     跳至自定义光标的位置</div><div class="line">:marks          列出自定义的特别标记</div><div class="line">.          重复上一次的动作/改动</div><div class="line">Visual          可是模式 v 进入可是模式 V 一样，但是选择整行</div><div class="line">CTRL+V          文本块的模式位移 在次模式下选择号文本块之后I，A可以对选择文本进行更改;~,U,u对文本块大小写转换</div><div class="line">p P          从寄存器中取回内容</div><div class="line">map W gg     使W 映射成为gg 命令</div><div class="line">:set list     查看TAB，与空格</div><div class="line">:set filetype     查看文件用的神码语言</div><div class="line">"ay "ap          将内容复制到寄存器a中，在将a寄存器中的内容粘贴</div><div class="line">:write &amp;gt;&amp;gt; file     将当前文件追加到file文件中 也可以与可是模式使用，选择需要的内容追加到文件内容中</div><div class="line">:split :close     多窗口显示文件，CTRL+w在窗口中切换; :split open ,:close close</div><div class="line">:4split hi.c     以4行的高度，打开hi.c文件</div><div class="line">:vsplit          是垂直分割窗口</div><div class="line">:only          关闭其他所有窗口</div><div class="line">:qall :wall     退出，保存所有窗口</div><div class="line">vimdiff 1.c 2.c     比较两个文件的不同之处 zo 展开折叠行，zc折叠</div><div class="line">:diffupdate     时时更新对应的高亮显示---&amp;gt;详细参考手册：</div><div class="line">gq3j  gggqG     gq3j格式化以下三行文本，gggqG格式化全区</div><div class="line">:read !ls     读取当前目录下的内容写入文本中</div><div class="line">:%s/hi/hello/g     将文本中所有带有hi的字符，替换为hello     这里匹配正则更加</div><div class="line">vim *.c          可以将当前路径中的一些文件内容进行替换，当然要加匹配规则啦</div><div class="line">g CTRL+g     统计文本字数，加上正则规则可以更花哨～</div><div class="line">K          对于写shell脚本，或者C程序时，将光标移到函数关键字上按K会出来man哦～</div><div class="line">:sc CRRL+d     在用tab建自动补全命令时，可以使用CTRL+d 列出命令列表</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -461,7 +463,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-count">31</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -478,7 +480,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
